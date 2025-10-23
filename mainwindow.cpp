@@ -2,9 +2,6 @@
 #include "ui_mainwindow.h"
 #include<QKeyEvent>
 #include<QTimer>
-#include<QPropertyAnimation>
-#include<QSequentialAnimationGroup>
-#include <QPainter>
 #include<QApplication>
 
 MainWindow::MainWindow(QWidget *parent)
@@ -12,10 +9,14 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-
+    //窗口标题
+    setWindowTitle("RUBBER MAN");
+    //窗口图标
+    setWindowIcon(QPixmap(":/1.png"));
+    //地面
     QPixmap pix(":/2.png");
     ui->label->setPixmap(pix);
-
+    //人物
     QPixmap pix2(":/1.png");
     ui->label_2->setPixmap(pix2);
 
@@ -52,12 +53,12 @@ void MainWindow::keyPressEvent(QKeyEvent *event)
 void MainWindow::up()
 {
     QRect currentRect = ui->label_2->geometry();
-    int newY = currentRect.y() - 36;  // 上移10像素
+    int newY = currentRect.y() - 36;
     ui->label_2->setGeometry(currentRect.x(), newY, currentRect.width(), currentRect.height());
 
     QTimer::singleShot(965, this,[=](){
         QRect currentRect = ui->label_2->geometry();
-        int newY = currentRect.y() + 36;  // 上移10像素
+        int newY = currentRect.y() + 36;
         ui->label_2->setGeometry(currentRect.x(), newY, currentRect.width(), currentRect.height());
     });
 }
@@ -65,12 +66,15 @@ void MainWindow::up()
 void MainWindow::right()
 {
     QRect currentRect1 = ui->label->geometry();
-    int newX = currentRect1.x() - 20;  // 上移10像素
+    int newX = currentRect1.x() - 20;
     ui->label->setGeometry(newX, currentRect1.y(), currentRect1.width(), currentRect1.height());
     QTimer::singleShot(500,this,[=](){
         QRect currentRect1 = ui->label->geometry();
-        int newX = currentRect1.x()  ==-11;  // 上移10像素
+        int newX = currentRect1.x()  ==-11;
         ui->label->setGeometry(newX, currentRect1.y(), currentRect1.width(), currentRect1.height());
+        //(=
+        //I know you're hurry,but don't hurry
+        //Becose I'am hurry too(I don't have some ideas for these code.)(=(=
     });
 }
 
@@ -79,10 +83,18 @@ void MainWindow::left()
     QRect currentRect2 = ui->label->geometry();
     int newX = currentRect2.x() + 36;
     ui->label->setGeometry(newX,currentRect2.y(),currentRect2.width(), currentRect2.height());
-    QTimer::singleShot(10,this,[=](){
+    QTimer::singleShot(1,this,[=](){
         QRect currentRect2 = ui->label->geometry();
-        int newX = currentRect2.x()  ==-11;  // 上移10像素
+        int newX = currentRect2.x()  ==-11;  // 归位
         ui->label->setGeometry(newX, currentRect2.y(), currentRect2.width(), currentRect2.height());
     });
 }
-
+/*解释:
+ * 此处的
+ * QTimer::singleShot(500,this,[=](){
+        QRect currentRect1 = ui->label->geometry();
+        int newX = currentRect1.x()  ==-11;
+        ui->label->setGeometry(newX, currentRect1.y(), currentRect1.width(), currentRect1.height());
+    });
+ * 是因为图片有限而实现的一种视觉上的"无限移动"
+ */
