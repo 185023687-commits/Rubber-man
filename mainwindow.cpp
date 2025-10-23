@@ -74,7 +74,7 @@ void MainWindow::right()
         ui->label->setGeometry(newX, currentRect1.y(), currentRect1.width(), currentRect1.height());
         //(=
         //I know you're hurry,but don't hurry
-        //Becose I'am hurry too(I don't have some ideas for these code.)(=(=
+        //Because I'am hurry too(I don't have some ideas for these code.)(=(=
     });
 }
 
