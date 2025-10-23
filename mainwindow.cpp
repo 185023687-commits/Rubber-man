@@ -46,6 +46,7 @@ void MainWindow::keyPressEvent(QKeyEvent *event)
         break;
     case Qt::Key_Left:
         left();
+        break;
     }
 
 
@@ -70,7 +71,7 @@ void MainWindow::right()
     ui->label->setGeometry(newX, currentRect1.y(), currentRect1.width(), currentRect1.height());
     QTimer::singleShot(500,this,[=](){
         QRect currentRect1 = ui->label->geometry();
-        int newX = currentRect1.x()  ==-11;
+        int newX = currentRect1.x()  == -11;
         ui->label->setGeometry(newX, currentRect1.y(), currentRect1.width(), currentRect1.height());
         //(=
         //I know you're hurry,but don't hurry
