@@ -89,6 +89,9 @@ void MainWindow::left()
         int newX = currentRect2.x()  ==-11;  // 归位
         ui->label->setGeometry(newX, currentRect2.y(), currentRect2.width(), currentRect2.height());
     });
+
+    ui->progressBar->valueChanged(ui->progressBar->value() - 10);
+    update();
 }
 /*解释:
  * 此处的

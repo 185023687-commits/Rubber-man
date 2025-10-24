@@ -14,6 +14,7 @@
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
+#include <QtWidgets/QProgressBar>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QWidget>
 
@@ -28,6 +29,7 @@ public:
     QLabel *label_3;
     QLabel *label_4;
     QLabel *label_5;
+    QProgressBar *progressBar;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -54,6 +56,11 @@ public:
         label_5 = new QLabel(centralwidget);
         label_5->setObjectName("label_5");
         label_5->setGeometry(QRect(770, -110, 171, 361));
+        progressBar = new QProgressBar(centralwidget);
+        progressBar->setObjectName("progressBar");
+        progressBar->setGeometry(QRect(550, 10, 311, 16));
+        progressBar->setStyleSheet(QString::fromUtf8("border:none"));
+        progressBar->setValue(100);
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");
@@ -76,6 +83,9 @@ public:
         label_3->setText(QCoreApplication::translate("MainWindow", "\346\254\242\350\277\216\346\235\245\345\210\260\350\215\222\350\212\234\344\271\213\345\237\216\357\274\201", nullptr));
         label_4->setText(QCoreApplication::translate("MainWindow", "\346\214\211\344\270\213\345\217\263\347\256\255\345\244\264\351\224\256\357\274\214\346\202\250\345\217\257\344\273\245\346\227\240\351\231\220\347\247\273\345\212\250", nullptr));
         label_5->setText(QCoreApplication::translate("MainWindow", "<html><head/><body><p><br/></p></body></html>", nullptr));
+#if QT_CONFIG(tooltip)
+        progressBar->setToolTip(QCoreApplication::translate("MainWindow", "<html><head/><body><p>life</p><p><br/></p></body></html>", nullptr));
+#endif // QT_CONFIG(tooltip)
     } // retranslateUi
 
 };
