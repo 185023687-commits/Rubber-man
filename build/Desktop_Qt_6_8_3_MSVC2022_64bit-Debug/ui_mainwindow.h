@@ -11,6 +11,7 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QCommandLinkButton>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
@@ -30,6 +31,7 @@ public:
     QLabel *label_4;
     QLabel *label_5;
     QProgressBar *progressBar;
+    QCommandLinkButton *page;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -61,6 +63,9 @@ public:
         progressBar->setGeometry(QRect(550, 10, 311, 16));
         progressBar->setStyleSheet(QString::fromUtf8("border:none"));
         progressBar->setValue(100);
+        page = new QCommandLinkButton(centralwidget);
+        page->setObjectName("page");
+        page->setGeometry(QRect(680, 470, 185, 41));
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");
@@ -86,6 +91,7 @@ public:
 #if QT_CONFIG(tooltip)
         progressBar->setToolTip(QCoreApplication::translate("MainWindow", "<html><head/><body><p>life</p><p><br/></p></body></html>", nullptr));
 #endif // QT_CONFIG(tooltip)
+        page->setText(QCoreApplication::translate("MainWindow", "\347\246\273\345\274\200\346\225\231\347\250\213", nullptr));
     } // retranslateUi
 
 };

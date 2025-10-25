@@ -40,10 +40,29 @@ MainWindow::MainWindow(QWidget *parent)
     {
         ui->progressBar->setValue(100);
     }
-    if (ui->label_5->geometry().x() == ui->label_2->geometry().x())
-    {
-        ui->progressBar->setValue(ui->progressBar->value() - 10);
-    }
+
+    connect(ui->page,&QCommandLinkButton::clicked,[=](){
+        ui->page->hide();
+        ui->label->hide();
+        ui->label_2->hide();
+        ui->label_3->hide();
+        ui->label_4->hide();
+        ui->label_5->hide();
+        ui->progressBar->hide();
+
+        QLabel* label_6 = new QLabel();
+        label_6->setText("欢迎来到RubberMan!!!");
+        QFont font;
+        font.setPointSize(12);  // 设置字体大小为20点
+        label_6->setFont(font);
+        label_6->setGeometry(50,60,192,40);
+        label_6->setParent(this);
+        label_6->show();
+
+        QTimer::singleShot(70902,this,[=](){
+            label_6->hide();
+        });
+    });
 }
 
 MainWindow::~MainWindow()
@@ -110,7 +129,7 @@ void MainWindow::left()
     QRect currentRect2 = ui->label->geometry();
     int newX = currentRect2.x() + 36;
     ui->label->setGeometry(newX,currentRect2.y(),currentRect2.width(), currentRect2.height());
-    QTimer::singleShot(1,this,[=](){
+    QTimer::singleShot(10,this,[=](){
         QRect currentRect2 = ui->label->geometry();
         int newX = currentRect2.x()  ==-11;  // 归位
         ui->label->setGeometry(newX, currentRect2.y(), currentRect2.width(), currentRect2.height());

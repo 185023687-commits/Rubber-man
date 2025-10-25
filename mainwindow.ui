@@ -101,6 +101,19 @@
      <number>100</number>
     </property>
    </widget>
+   <widget class="QCommandLinkButton" name="page">
+    <property name="geometry">
+     <rect>
+      <x>680</x>
+      <y>470</y>
+      <width>185</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>离开教程</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
