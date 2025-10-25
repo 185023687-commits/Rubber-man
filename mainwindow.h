@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include "dead.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -26,5 +27,6 @@ private:
     void up();
     void right();
     void left();
+    dead s;
 };
 #endif // MAINWINDOW_H

@@ -3,6 +3,7 @@
 #include<QKeyEvent>
 #include<QTimer>
 #include<QApplication>
+#include"dead.h"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -20,11 +21,29 @@ MainWindow::MainWindow(QWidget *parent)
     QPixmap pix2(":/1.png");
     ui->label_2->setPixmap(pix2);
 
+    QPixmap pix3(":/errrrrrr.png");
+    ui->label_5->setPixmap(pix3);
+
     QTimer::singleShot(4500,this,[=](){
         ui->label_3->deleteLater();
         ui->label_4->deleteLater();
     });
 
+    ui->progressBar->setMinimum(0);
+    ui->progressBar->setMaximum(100);
+
+    if (ui->progressBar->value() == 0)
+    {
+        s.show();
+    }
+    if (s.close())
+    {
+        ui->progressBar->setValue(100);
+    }
+    if (ui->label_5->geometry().x() == ui->label_2->geometry().x())
+    {
+        ui->progressBar->setValue(ui->progressBar->value() - 10);
+    }
 }
 
 MainWindow::~MainWindow()
@@ -73,11 +92,18 @@ void MainWindow::right()
         QRect currentRect1 = ui->label->geometry();
         int newX = currentRect1.x()  == -11;
         ui->label->setGeometry(newX, currentRect1.y(), currentRect1.width(), currentRect1.height());
+
+
+        QRect currentRect = ui->label_5->geometry();
+        int NewX = currentRect.x() - 20;
+        ui->label_5->setGeometry(NewX, currentRect.y(), currentRect.width(), currentRect.height());
         //(=
         //I know you're hurry,but don't hurry
         //Because I'am hurry too(I don't have some ideas for these code.)(=(=
     });
 }
+
+
 
 void MainWindow::left()
 {
@@ -88,10 +114,12 @@ void MainWindow::left()
         QRect currentRect2 = ui->label->geometry();
         int newX = currentRect2.x()  ==-11;  // 归位
         ui->label->setGeometry(newX, currentRect2.y(), currentRect2.width(), currentRect2.height());
+
     });
 
-    ui->progressBar->valueChanged(ui->progressBar->value() - 10);
-    update();
+    QRect currentRect = ui->label_5->geometry();
+    int NewX = currentRect.x() + 20;
+    ui->label_5->setGeometry(NewX, currentRect.y(), currentRect.width(), currentRect.height());
 }
 /*解释:
  * 此处的

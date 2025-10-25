@@ -55,7 +55,7 @@ public:
         label_4->setGeometry(QRect(570, 230, 181, 16));
         label_5 = new QLabel(centralwidget);
         label_5->setObjectName("label_5");
-        label_5->setGeometry(QRect(770, -110, 171, 361));
+        label_5->setGeometry(QRect(1000, 260, 51, 71));
         progressBar = new QProgressBar(centralwidget);
         progressBar->setObjectName("progressBar");
         progressBar->setGeometry(QRect(550, 10, 311, 16));
