@@ -11,11 +11,12 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
-#include <QtWidgets/QCommandLinkButton>
 #include <QtWidgets/QLabel>
+#include <QtWidgets/QLineEdit>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QProgressBar>
+#include <QtWidgets/QPushButton>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QWidget>
 
@@ -31,7 +32,14 @@ public:
     QLabel *label_4;
     QLabel *label_5;
     QProgressBar *progressBar;
-    QCommandLinkButton *page;
+    QPushButton *page;
+    QPushButton *pushButton;
+    QLabel *label_1;
+    QLabel *label_6;
+    QLineEdit *lineEdit;
+    QPushButton *pushButton_2;
+    QLabel *label_7;
+    QLabel *label_8;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -61,11 +69,39 @@ public:
         progressBar = new QProgressBar(centralwidget);
         progressBar->setObjectName("progressBar");
         progressBar->setGeometry(QRect(550, 10, 311, 16));
-        progressBar->setStyleSheet(QString::fromUtf8("border:none"));
+        progressBar->setStyleSheet(QString::fromUtf8("border-radius:15px;\n"
+"border-image: url(:/lifeline.png);\n"
+"background-image: url(:/lifeline.png);"));
         progressBar->setValue(100);
-        page = new QCommandLinkButton(centralwidget);
+        page = new QPushButton(centralwidget);
         page->setObjectName("page");
-        page->setGeometry(QRect(680, 470, 185, 41));
+        page->setGeometry(QRect(730, 450, 75, 23));
+        page->setStyleSheet(QString::fromUtf8("border:none"));
+        pushButton = new QPushButton(centralwidget);
+        pushButton->setObjectName("pushButton");
+        pushButton->setEnabled(true);
+        pushButton->setGeometry(QRect(20, 420, 71, 81));
+        pushButton->setStyleSheet(QString::fromUtf8("background-image: url(:/login.png);\n"
+"border:none\n"
+""));
+        label_1 = new QLabel(centralwidget);
+        label_1->setObjectName("label_1");
+        label_1->setGeometry(QRect(40, 500, 53, 15));
+        label_6 = new QLabel(centralwidget);
+        label_6->setObjectName("label_6");
+        label_6->setGeometry(QRect(10, 0, 201, 31));
+        lineEdit = new QLineEdit(centralwidget);
+        lineEdit->setObjectName("lineEdit");
+        lineEdit->setGeometry(QRect(110, 240, 441, 41));
+        pushButton_2 = new QPushButton(centralwidget);
+        pushButton_2->setObjectName("pushButton_2");
+        pushButton_2->setGeometry(QRect(590, 430, 75, 23));
+        label_7 = new QLabel(centralwidget);
+        label_7->setObjectName("label_7");
+        label_7->setGeometry(QRect(190, 40, 351, 16));
+        label_8 = new QLabel(centralwidget);
+        label_8->setObjectName("label_8");
+        label_8->setGeometry(QRect(40, 10, 51, 51));
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");
@@ -92,6 +128,15 @@ public:
         progressBar->setToolTip(QCoreApplication::translate("MainWindow", "<html><head/><body><p>life</p><p><br/></p></body></html>", nullptr));
 #endif // QT_CONFIG(tooltip)
         page->setText(QCoreApplication::translate("MainWindow", "\347\246\273\345\274\200\346\225\231\347\250\213", nullptr));
+        pushButton->setText(QString());
+        label_1->setText(QCoreApplication::translate("MainWindow", "\347\231\273\345\275\225", nullptr));
+        label_6->setText(QCoreApplication::translate("MainWindow", "<html><head/><body><p><br/></p></body></html>", nullptr));
+#if QT_CONFIG(whatsthis)
+        lineEdit->setWhatsThis(QCoreApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-size:14pt;\">Name</span></p></body></html>", nullptr));
+#endif // QT_CONFIG(whatsthis)
+        pushButton_2->setText(QCoreApplication::translate("MainWindow", "\347\241\256\345\256\232", nullptr));
+        label_7->setText(QString());
+        label_8->setText(QString());
     } // retranslateUi
 
 };

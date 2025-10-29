@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include "dead.h"
+#include "ui_mainwindow.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {

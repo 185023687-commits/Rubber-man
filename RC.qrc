@@ -4,5 +4,8 @@
         <file>1.png</file>
         <file>1-2.png</file>
         <file>errrrrrr.png</file>
+        <file>login.png</file>
+        <file>lifeline.png</file>
+        <file>icon.png</file>
     </qresource>
 </RCC>
