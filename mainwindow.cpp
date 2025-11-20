@@ -13,11 +13,17 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
     //窗口标题
+    int life = ui->progressBar->value();
     setWindowTitle("RUBBER MAN");
     //窗口图标
     setWindowIcon(QPixmap(":/1.png"));
     //地面
+    ui->textBrowser->hide();
     ui->lineEdit->hide();
+    ui->label_5->hide();
+    ui->pushButton_3->hide();
+    ui->toolButton->hide();
+    ui->toolButton_2->hide();
     ui->pushButton_2->hide();
     ui->pushButton->hide();
     ui->label_1->hide();
@@ -48,7 +54,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->progressBar->setMinimum(0);
     ui->progressBar->setMaximum(100);
 
-    if (ui->progressBar->value() == 0)
+    if (life == 0)
     {
         s.show();
     }
@@ -107,10 +113,30 @@ MainWindow::MainWindow(QWidget *parent)
             label_9->hide();
             QString userName = ui->lineEdit->text();
             ui->label_7->setText("你好,"+ userName);
-
+            ui->toolButton->show();
+            ui->toolButton_2->show();
+            ui->toolButton_2->setGeometry(600,200,71,71);
             QPixmap pix(":/icon.png");
             ui->label_8->setPixmap(pix);
         }
+    });
+
+    connect(ui->toolButton,&QToolButton::clicked,[=](){
+        ui->label_7->hide();
+        ui->label_8->hide();
+        ui->toolButton->hide();
+        ui->toolButton_2->hide();
+
+        ui->pushButton_3->show();
+    });
+
+    connect(ui->toolButton_2,&QToolButton::clicked,[=](){
+        ui->toolButton_2->hide();
+        ui->toolButton->hide();
+        ui->label_7->hide();
+        ui->label_8->hide();
+        ui->textBrowser->show();
+        ui->textBrowser->setGeometry(290,180,301,191);
     });
 }
 
@@ -124,14 +150,14 @@ MainWindow::~MainWindow()
 void MainWindow::keyPressEvent(QKeyEvent *event)
 {
     switch (event->key()) {
-    case Qt::Key_U:
+    case Qt::Key_Up:
         up();
         break;
 
-    case Qt::Key_R:
+    case Qt::Key_Right:
         right();
         break;
-    case Qt::Key_L:
+    case Qt::Key_Left:
         left();
         break;
     }
@@ -167,7 +193,7 @@ void MainWindow::right()
         ui->label_5->setGeometry(NewX, currentRect.y(), currentRect.width(), currentRect.height());
         //(=
         //I know you're hurry,but don't hurry
-        //Because I'am hurry too(I don't have some ideas for these code.)(=(=
+        //Because I'am hurry too(I don't have some ideas for these codes.)(=(=
     });
 }
 
@@ -197,4 +223,5 @@ void MainWindow::left()
         ui->label->setGeometry(newX, currentRect1.y(), currentRect1.width(), currentRect1.height());
     });
  * Is because iength of "2.png" finite a kind of achievement "infinty movement" effect
+ * =)                           =3
  */

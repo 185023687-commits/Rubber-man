@@ -7,5 +7,9 @@
         <file>login.png</file>
         <file>lifeline.png</file>
         <file>icon.png</file>
+        <file>ex.png</file>
+        <file>ww.png</file>
+        <file>whitebg.png</file>
+        <file>about.png</file>
     </qresource>
 </RCC>

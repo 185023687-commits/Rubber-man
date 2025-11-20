@@ -179,9 +179,13 @@ release\qrc_RC.cpp: ..\..\RC.qrc \
 		E:\4445\6.8.3\msvc2022_64\bin\rcc.exe \
 		..\..\2.png \
 		..\..\1-2.png \
+		..\..\ex.png \
+		..\..\ww.png \
 		..\..\1.png \
 		..\..\lifeline.png \
 		..\..\login.png \
+		..\..\about.png \
+		..\..\whitebg.png \
 		..\..\errrrrrr.png \
 		..\..\icon.png
 	E:\4445\6.8.3\msvc2022_64\bin\rcc.exe -name RC --no-zstd ..\..\RC.qrc -o release\qrc_RC.cpp
@@ -608,8 +612,8 @@ release\moc_mainwindow.cpp: ..\..\mainwindow.h \
 		E:\4445\6.8.3\msvc2022_64\include\QtWidgets\QPushButton \
 		E:\4445\6.8.3\msvc2022_64\include\QtWidgets\qpushbutton.h \
 		E:\4445\6.8.3\msvc2022_64\include\QtWidgets\qabstractbutton.h \
-		E:\4445\6.8.3\msvc2022_64\include\QtWidgets\QStatusBar \
-		E:\4445\6.8.3\msvc2022_64\include\QtWidgets\qstatusbar.h \
+		E:\4445\6.8.3\msvc2022_64\include\QtWidgets\QToolButton \
+		E:\4445\6.8.3\msvc2022_64\include\QtWidgets\qtoolbutton.h \
 		release\moc_predefs.h \
 		E:\4445\6.8.3\msvc2022_64\bin\moc.exe
 	E:\4445\6.8.3\msvc2022_64\bin\moc.exe $(DEFINES) --compiler-flavor=msvc --include D:/0010/HA/build/Desktop_Qt_6_8_3_MSVC2022_64bit-Debug/release/moc_predefs.h -IE:/4445/6.8.3/msvc2022_64/mkspecs/win32-msvc -ID:/0010/HA -IE:/4445/6.8.3/msvc2022_64/include -IE:/4445/6.8.3/msvc2022_64/include/QtSvgWidgets -IE:/4445/6.8.3/msvc2022_64/include/QtSvg -IE:/4445/6.8.3/msvc2022_64/include/QtWidgets -IE:/4445/6.8.3/msvc2022_64/include/QtQuick3D -IE:/4445/6.8.3/msvc2022_64/include/QtQuick3DRuntimeRender -IE:/4445/6.8.3/msvc2022_64/include/QtQuick -IE:/4445/6.8.3/msvc2022_64/include/QtOpenGL -IE:/4445/6.8.3/msvc2022_64/include/QtQuick3DUtils -IE:/4445/6.8.3/msvc2022_64/include/QtShaderTools -IE:/4445/6.8.3/msvc2022_64/include/QtGui -IE:/4445/6.8.3/msvc2022_64/include/QtQmlMeta -IE:/4445/6.8.3/msvc2022_64/include/QtQmlModels -IE:/4445/6.8.3/msvc2022_64/include/QtQmlWorkerScript -IE:/4445/6.8.3/msvc2022_64/include/QtQml -IE:/4445/6.8.3/msvc2022_64/include/QtQmlIntegration -IE:/4445/6.8.3/msvc2022_64/include/QtNetwork -IE:/4445/6.8.3/msvc2022_64/include/QtConcurrent -IE:/4445/6.8.3/msvc2022_64/include/QtCore -I. -I"E:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include" -I"E:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\ATLMFC\include" -I"E:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\VS\include" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\10\\include\10.0.26100.0\\um" -I"C:\Program Files (x86)\Windows Kits\10\\include\10.0.26100.0\\shared" -I"C:\Program Files (x86)\Windows Kits\10\\include\10.0.26100.0\\winrt" -I"C:\Program Files (x86)\Windows Kits\10\\include\10.0.26100.0\\cppwinrt" -I"C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\include\um" ..\..\mainwindow.h -o release\moc_mainwindow.cpp
@@ -864,8 +868,8 @@ release\dead.obj: ..\..\dead.cpp ..\..\dead.h \
 		E:\4445\6.8.3\msvc2022_64\include\QtWidgets\qmenu.h \
 		E:\4445\6.8.3\msvc2022_64\include\QtWidgets\QProgressBar \
 		E:\4445\6.8.3\msvc2022_64\include\QtWidgets\qprogressbar.h \
-		E:\4445\6.8.3\msvc2022_64\include\QtWidgets\QStatusBar \
-		E:\4445\6.8.3\msvc2022_64\include\QtWidgets\qstatusbar.h
+		E:\4445\6.8.3\msvc2022_64\include\QtWidgets\QToolButton \
+		E:\4445\6.8.3\msvc2022_64\include\QtWidgets\qtoolbutton.h
 
 release\main.obj: ..\..\main.cpp ..\..\mainwindow.h \
 		E:\4445\6.8.3\msvc2022_64\include\QtWidgets\QMainWindow \
@@ -1085,8 +1089,8 @@ release\main.obj: ..\..\main.cpp ..\..\mainwindow.h \
 		E:\4445\6.8.3\msvc2022_64\include\QtWidgets\QPushButton \
 		E:\4445\6.8.3\msvc2022_64\include\QtWidgets\qpushbutton.h \
 		E:\4445\6.8.3\msvc2022_64\include\QtWidgets\qabstractbutton.h \
-		E:\4445\6.8.3\msvc2022_64\include\QtWidgets\QStatusBar \
-		E:\4445\6.8.3\msvc2022_64\include\QtWidgets\qstatusbar.h
+		E:\4445\6.8.3\msvc2022_64\include\QtWidgets\QToolButton \
+		E:\4445\6.8.3\msvc2022_64\include\QtWidgets\qtoolbutton.h
 
 release\mainwindow.obj: ..\..\mainwindow.cpp ..\..\mainwindow.h \
 		E:\4445\6.8.3\msvc2022_64\include\QtWidgets\QMainWindow \
@@ -1306,8 +1310,8 @@ release\mainwindow.obj: ..\..\mainwindow.cpp ..\..\mainwindow.h \
 		E:\4445\6.8.3\msvc2022_64\include\QtWidgets\QPushButton \
 		E:\4445\6.8.3\msvc2022_64\include\QtWidgets\qpushbutton.h \
 		E:\4445\6.8.3\msvc2022_64\include\QtWidgets\qabstractbutton.h \
-		E:\4445\6.8.3\msvc2022_64\include\QtWidgets\QStatusBar \
-		E:\4445\6.8.3\msvc2022_64\include\QtWidgets\qstatusbar.h \
+		E:\4445\6.8.3\msvc2022_64\include\QtWidgets\QToolButton \
+		E:\4445\6.8.3\msvc2022_64\include\QtWidgets\qtoolbutton.h \
 		E:\4445\6.8.3\msvc2022_64\include\QtGui\QKeyEvent \
 		E:\4445\6.8.3\msvc2022_64\include\QtCore\QTimer \
 		E:\4445\6.8.3\msvc2022_64\include\QtCore\qtimer.h \
